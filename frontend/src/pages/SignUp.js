@@ -1,21 +1,27 @@
-import { useState } from 'react'
 import '../App.css'
+import { useState } from 'react'
+import axios from 'axios'
+import { URL_SIGNUP } from '../urls/urls'
 
 export default function SignUp() {
 
-    const [ user, setUser ] = useState({})
+  const [ user, setUser ] = useState({})
 
-    const handleChange = (event) => {
-        const { name, value } = event.target
-        console.log({ name, value })
-        setUser((user) => ({ ...user, [name]: value }))
-        console.log(user)
-    }
+  const handleChange = (event) => {
+    const { name, value } = event.target
+    setUser((user) => ({ ...user, [name]: value }))
+  }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        console.log(event.target)
+  const handleSubmit = async (event) => {
+    event.preventDefault()
+    console.log(user)
+    try {
+      const response = await axios.post(URL_SIGNUP, user)
+      console.log(response)
+    } catch(error) {
+      console.log(error)
     }
+  }
 
 
   return (
