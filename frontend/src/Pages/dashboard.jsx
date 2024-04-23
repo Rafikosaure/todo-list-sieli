@@ -20,11 +20,10 @@ function Dashboard() {
         // empêche le rafraîchissement de la page
         e.preventDefault();
 
-        // Envoi une requêtre en base de donées pour enregistrer la tâche
+        // Envoi une requêtre en base de données pour enregistrer la tâche
         try{
-            console.log(login);
             const response = await axios.post(URL.ADD_TASK, task);
-                console.log(response);
+            console.log(response);
           }catch(e){
             console.log(e);
           }
