@@ -1,11 +1,13 @@
 import '../styles/Login.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { URL_SIGNUP } from '../urls/urls'
 
 export default function SignUp() {
 
   const [ user, setUser ] = useState({})
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -18,6 +20,7 @@ export default function SignUp() {
     try {
       const response = await axios.post(URL_SIGNUP, user)
       console.log(response)
+      navigate('/sign')
     } catch(error) {
       console.log(error)
     }
