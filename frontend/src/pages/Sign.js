@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { addUser, selectUser } from '../redux/slices/UserSlice'
 import axios from 'axios'
 import { URL_SIGN } from '../urls/urls'
+import { Link } from 'react-router-dom'
 
 
 export default function Sign() {
@@ -40,6 +41,7 @@ export default function Sign() {
         <input type="password" id="password" name='password' placeholder='mot de passe' required onChange={handleChange} />
         <button type='submit'>Se connecter</button>
       </form>
+      <div className='to-signup'>Vous n'êtes pas encore inscrit ? cliquez <Link to={"/signup"}>ici</Link> !</div>
     </div>
   )
 }

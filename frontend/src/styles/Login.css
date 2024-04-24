@@ -11,3 +11,7 @@
     flex-direction: column;
     gap: 15px;
 }
+
+.to-signup {
+    margin-top: 30px;
+}
