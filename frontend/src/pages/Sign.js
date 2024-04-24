@@ -1,4 +1,4 @@
-import '../App.css'
+import '../styles/Login.css'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, selectUser } from '../redux/slices/UserSlice'
@@ -13,22 +13,24 @@ export default function Sign() {
   const dispatch = useDispatch()
 
   const handleChange = (event) => {
-      const { name, value } = event.target
-      setUser((user) => ({ ...user, [name]: value }))
+    const { name, value } = event.target
+    setUser((user) => ({ ...user, [name]: value }))
   }
 
   const handleSubmit = async (event) => {
-      event.preventDefault()
-      dispatch(addUser(user))
-      try {
-        const response = await axios.post(URL_SIGN, user)
-        console.log(response)
-        const token = response.data.token
-        localStorage.setItem("token", token)
-      } catch(error) {
-        console.log(error)
-      }
+    event.preventDefault()
+    dispatch(addUser(user))
+    try {
+      const response = await axios.post(URL_SIGN, user)
+      console.log(response)
+      const token = response.data.token
+      localStorage.setItem("token", token)
+    } catch(error) {
+      console.log(error)
+    }
   }
+
+  console.log("User récupéré depuis le store :", currentUser)
 
   return (
     <div className='main-div'>

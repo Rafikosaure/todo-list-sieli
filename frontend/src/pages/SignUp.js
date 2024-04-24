@@ -1,4 +1,4 @@
-import '../App.css'
+import '../styles/Login.css'
 import { useState } from 'react'
 import axios from 'axios'
 import { URL_SIGNUP } from '../urls/urls'
