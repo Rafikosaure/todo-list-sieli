@@ -2,6 +2,8 @@ import '../App.css'
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, selectUser } from '../redux/slices/UserSlice'
+import axios from 'axios'
+import { URL_SIGN } from '../urls/urls'
 
 
 export default function Sign() {
@@ -15,9 +17,17 @@ export default function Sign() {
       setUser((user) => ({ ...user, [name]: value }))
   }
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
       event.preventDefault()
       dispatch(addUser(user))
+      try {
+        const response = await axios.post(URL_SIGN, user)
+        console.log(response)
+        const token = response.data.token
+        localStorage.setItem("token", token)
+      } catch(error) {
+        console.log(error)
+      }
   }
 
   return (
