@@ -1,5 +1,6 @@
 import '../styles/Login.css'
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { addUser, selectUser } from '../redux/slices/UserSlice'
 import axios from 'axios'
@@ -12,6 +13,7 @@ export default function Sign() {
   const [ user, setUser ] = useState({})
   const currentUser = useSelector(selectUser)
   const dispatch = useDispatch()
+  const navigate = useNavigate()
 
   const handleChange = (event) => {
     const { name, value } = event.target
@@ -26,6 +28,7 @@ export default function Sign() {
       console.log(response)
       const token = response.data.token
       localStorage.setItem("token", token)
+      navigate("/")
     } catch(error) {
       console.log(error)
     }
