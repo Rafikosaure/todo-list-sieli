@@ -2,21 +2,18 @@ import { NavLink } from 'react-router-dom'
 import '../styles/Header.css'
 import Logo from '../images/todolist.png'
 
+
 export default function Header() {
+
   return (
     <div className='header'>
-      <div className='div-image'><img src={Logo} alt="logo" /></div>
+      <div className='div-image'><img src={Logo} alt="logo" /><h1 className='title'>ToDo.com</h1></div>
       <nav>
         <NavLink to={'/'} className={({ isActive }) =>
-            isActive
-              ? 'navlink navlink-disabled'
-              : 'navlink navlink-enabled'
-        }>Accueil</NavLink>
-        <NavLink to={'/sign'} className={({ isActive }) =>
-            isActive
+          isActive
             ? 'navlink navlink-disabled'
             : 'navlink navlink-enabled'
-        }>Se connecter</NavLink>
+        }>Accueil</NavLink>
       </nav>
     </div>
   )
