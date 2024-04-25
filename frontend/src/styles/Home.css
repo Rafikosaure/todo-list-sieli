@@ -1,0 +1,25 @@
+.main-div {
+    width: 80%;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.div-log {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.div-log button {
+    width: 150px;
+    height: 50px;
+    background: linear-gradient(#e66465, #9198e5);
+    border: 1px solid lightblue;
+    border-radius: 25px;
+    color: white;
+}
