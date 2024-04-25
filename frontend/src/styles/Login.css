@@ -1,0 +1,18 @@
+
+.main-div {
+    height: 100vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+      }
+    
+    .login-form{
+      display: flex; 
+      flex-direction: column;
+      gap: 15px
+    }
+    
+    .to-signup{ 
+        margin-top: 30px;
+    }
