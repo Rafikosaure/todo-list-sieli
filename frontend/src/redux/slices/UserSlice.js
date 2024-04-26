@@ -1,7 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-    user: []
+    user: {
+            email: "",
+            password: ""
+    }
 }
 
 export const userSlice = createSlice({
@@ -9,12 +12,11 @@ export const userSlice = createSlice({
     initialState,
     reducers: {
         addUser: (store, action) => {
-            store.user = [ ...store.user, action.payload ]
-            // console.log(store.user)
+            store.user = { ...store.user, ...action.payload }
             console.log('Utilisateur enregistré !', store.user)
         },
         removeUser: (store, action) => {
-            store.user = []
+            store.user = {}
             console.log('Store réinitialisé !', store.user)
         }
     }
