@@ -3,6 +3,7 @@ import '../styles/Home.css'
 import { useNavigate } from 'react-router-dom'
 import { removeUser, selectUser } from '../redux/slices/UserSlice'
 import { useDispatch, useSelector } from 'react-redux'
+import Dashboard from '../components/Dashboard'
 
 export default function Home() {
 
@@ -35,6 +36,7 @@ export default function Home() {
         <div className='div-log'>
             <button onClick={loginLogout}>{buttonText}</button>
         </div>
+        <Dashboard />
     </div>
     )
 }

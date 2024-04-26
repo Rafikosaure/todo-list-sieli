@@ -1,7 +1,7 @@
-import "./style.scss";
-import { DeleteSvg } from "./logo/logo";
-import { UpdateSvg } from "./logo/logo";
-import { DoneSvg } from "./logo/logo";
+import "../styles/Card.scss";
+import { DeleteSvg } from "./logo";
+import { UpdateSvg } from "./logo";
+import { DoneSvg } from "./logo";
 
 export const Card = (props) =>{
     /**

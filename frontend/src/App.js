@@ -3,8 +3,7 @@ import Sign from './pages/Sign';
 import SignUp from './pages/SignUp';
 import Header from './components/Header';
 import './App.css';
-import Dashboard from './pages/Dashboard';
-// import Home from './pages/Home';
+import Home from './pages/Home';
 
 
 function App() {
@@ -12,8 +11,7 @@ function App() {
     <Router>
         <Header />
           <Routes>
-            {/* <Route path='/' element={<Home />} /> */}
-            <Route path="/" element={<Dashboard />} />
+            <Route path="/" element={<Home />} />
             <Route path='/signup' element={<SignUp />} />
             <Route path='/sign' element={<Sign />} />
           </Routes>
