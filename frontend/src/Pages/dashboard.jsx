@@ -79,10 +79,8 @@ function Dashboard() {
     const fetchTasks = async () => {
         // fetches all the task in the database
         try{
-            // const response = await axios.get(URL.GET_TASKS);
-            // updates tasksList state
-            // setTasksList(response.data);
-            setTasksList(dummyData);
+            const response = await axios.get(URL.GET_TASKS);
+            setTasksList(response.data); 
         }catch(e){
             console.log(e);
         }
