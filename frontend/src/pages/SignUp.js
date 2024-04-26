@@ -16,7 +16,7 @@ export default function SignUp() {
 
   const handleSubmit = async (event) => {
     event.preventDefault()
-    console.log(user)
+    // console.log(user)
     try {
       const response = await axios.post(URL_SIGNUP, user)
       console.log(response)

@@ -1,8 +1,8 @@
 import '../styles/Login.css'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDispatch, useSelector } from 'react-redux'
-import { addUser, selectUser } from '../redux/slices/UserSlice'
+import { useDispatch } from 'react-redux'
+import { addUser } from '../redux/slices/UserSlice'
 import axios from 'axios'
 import { URL_SIGN } from '../urls/urls'
 import { Link } from 'react-router-dom'
@@ -11,7 +11,6 @@ import { Link } from 'react-router-dom'
 export default function Sign() {
 
   const [ user, setUser ] = useState({})
-  const currentUser = useSelector(selectUser)
   const dispatch = useDispatch()
   const navigate = useNavigate()
 
@@ -33,8 +32,6 @@ export default function Sign() {
       console.log(error)
     }
   }
-
-  console.log("User récupéré depuis le store :", currentUser)
 
   return (
     <div className='main-div'>
